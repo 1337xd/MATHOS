@@ -1,0 +1,59 @@
+CREATE TABLE Animal
+(Id int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+Name varchar (50),
+Species varchar (100),
+Age int,
+)
+
+CREATE TABLE People
+(Id int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+FirstName varchar (50),
+LastName varchar (50),
+Age int,
+Gender varchar (20),
+)
+
+INSERT INTO People VALUES
+(1, 'Ivan', 'Pandžić', 24, 'male')
+(2, 'Marin', 'Bertić, 24, 'male')
+(3, 'Mislav', 'Horvat', 22, 'male')
+(4, 'Lorena', 'Šutalo', 21, 'female')
+(5, 'Filip', 'Gerić', 27, 'male')
+
+SELECT FirstName, LastName
+FROM People
+
+SELECT *
+FROM People
+
+SELECT COUNT(FirstName)
+FROM People
+
+SELECT AVG(Age)
+FROM People
+
+SELECT *
+FROM People
+WHERE FirstName = 'Ivan'
+
+SELECT *
+FROM People
+WHERE Age > 25
+
+SELECT *
+FROM People
+WHERE Age <= 30 AND Gender = 'male'
+
+
+INSERT INTO Animal VALUES
+(1, 'Ares', 'Dog', 8)
+(2, 'Flufy', 'Cat', 7)
+(3, 'Peroslav', 'Bird', 12)
+(4, 'Stjepan', 'Lizard', 15)
+(5, 'Miss.LordHaveMercy', 'Spider', 3)
+
+CREATE TABLE AnimalID
+(Id int NOT NULL,
+FOREIGN KEY (Id) REFERENCES Animal(Id),
+Name varchar (50),
+)
