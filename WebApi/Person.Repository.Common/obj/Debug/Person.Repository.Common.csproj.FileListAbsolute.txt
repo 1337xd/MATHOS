@@ -1,0 +1,6 @@
+C:\Users\Ivan\Documents\WebApi\Person.Repository.Common\bin\Debug\Person.Repository.Common.dll
+C:\Users\Ivan\Documents\WebApi\Person.Repository.Common\bin\Debug\Person.Repository.Common.pdb
+C:\Users\Ivan\Documents\WebApi\Person.Repository.Common\obj\Debug\Person.Repository.Common.csproj.AssemblyReference.cache
+C:\Users\Ivan\Documents\WebApi\Person.Repository.Common\obj\Debug\Person.Repository.Common.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\Documents\WebApi\Person.Repository.Common\obj\Debug\Person.Repository.Common.dll
+C:\Users\Ivan\Documents\WebApi\Person.Repository.Common\obj\Debug\Person.Repository.Common.pdb

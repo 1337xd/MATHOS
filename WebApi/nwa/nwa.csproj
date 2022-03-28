@@ -163,7 +163,7 @@
     </Compile>
     <Compile Include="Models\AnimalModel.cs" />
     <Compile Include="Models\People.cs" />
-    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonRest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +248,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Person.Model\Person.Model.csproj">
+      <Project>{2F3B79CC-44BC-4B6E-B64D-30F303821313}</Project>
+      <Name>Person.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Person.Service\Person.Service.csproj">
+      <Project>{030045D2-0093-4906-B47A-A6CAE5D088FC}</Project>
+      <Name>Person.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

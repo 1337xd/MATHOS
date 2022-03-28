@@ -1,0 +1,5 @@
+C:\Users\Ivan\Documents\WebApi\Person.DAL\bin\Debug\Person.DAL.dll
+C:\Users\Ivan\Documents\WebApi\Person.DAL\bin\Debug\Person.DAL.pdb
+C:\Users\Ivan\Documents\WebApi\Person.DAL\obj\Debug\Person.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\Documents\WebApi\Person.DAL\obj\Debug\Person.DAL.dll
+C:\Users\Ivan\Documents\WebApi\Person.DAL\obj\Debug\Person.DAL.pdb

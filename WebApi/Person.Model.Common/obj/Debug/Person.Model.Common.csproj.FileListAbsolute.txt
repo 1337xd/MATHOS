@@ -1,0 +1,6 @@
+C:\Users\Ivan\Documents\WebApi\Person.Model.Common\bin\Debug\Person.Model.Common.dll
+C:\Users\Ivan\Documents\WebApi\Person.Model.Common\bin\Debug\Person.Model.Common.pdb
+C:\Users\Ivan\Documents\WebApi\Person.Model.Common\obj\Debug\Person.Model.Common.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\Documents\WebApi\Person.Model.Common\obj\Debug\Person.Model.Common.dll
+C:\Users\Ivan\Documents\WebApi\Person.Model.Common\obj\Debug\Person.Model.Common.pdb
+C:\Users\Ivan\Documents\WebApi\Person.Model.Common\obj\Debug\Person.Model.Common.csproj.AssemblyReference.cache

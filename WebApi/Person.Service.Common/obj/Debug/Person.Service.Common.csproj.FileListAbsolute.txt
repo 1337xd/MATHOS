@@ -1,0 +1,6 @@
+C:\Users\Ivan\Documents\WebApi\Person.Service.Common\bin\Debug\Person.Service.Common.dll
+C:\Users\Ivan\Documents\WebApi\Person.Service.Common\bin\Debug\Person.Service.Common.pdb
+C:\Users\Ivan\Documents\WebApi\Person.Service.Common\obj\Debug\Person.Service.Common.csproj.AssemblyReference.cache
+C:\Users\Ivan\Documents\WebApi\Person.Service.Common\obj\Debug\Person.Service.Common.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\Documents\WebApi\Person.Service.Common\obj\Debug\Person.Service.Common.dll
+C:\Users\Ivan\Documents\WebApi\Person.Service.Common\obj\Debug\Person.Service.Common.pdb

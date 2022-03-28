@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{41A5EB06-A887-47EF-89DD-B162C0F35B3D}</ProjectGuid>
+    <ProjectGuid>{030045D2-0093-4906-B47A-A6CAE5D088FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Person.Service</RootNamespace>
@@ -41,8 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.Service.cs" />
+    <Compile Include="PersonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Person.Model\Person.Model.csproj">
+      <Project>{2F3B79CC-44BC-4B6E-B64D-30F303821313}</Project>
+      <Name>Person.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Person.Repository\Person.Repository.csproj">
+      <Project>{C0F04AF3-941C-41D8-9D06-D62FDD8A28FC}</Project>
+      <Name>Person.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Person.Service.Common\Person.Service.Common.csproj">
+      <Project>{1B2FC633-86EA-47DB-99C5-9FC2C9FFFAD0}</Project>
+      <Name>Person.Service.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

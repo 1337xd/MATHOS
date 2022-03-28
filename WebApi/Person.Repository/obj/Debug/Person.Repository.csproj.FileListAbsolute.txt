@@ -1,0 +1,13 @@
+C:\Users\Ivan\Documents\WebApi\Person.Repository\bin\Debug\Person.Repository.dll
+C:\Users\Ivan\Documents\WebApi\Person.Repository\bin\Debug\Person.Repository.pdb
+C:\Users\Ivan\Documents\WebApi\Person.Repository\obj\Debug\Person.Repository.csproj.AssemblyReference.cache
+C:\Users\Ivan\Documents\WebApi\Person.Repository\obj\Debug\Person.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\Documents\WebApi\Person.Repository\obj\Debug\Person.Repository.dll
+C:\Users\Ivan\Documents\WebApi\Person.Repository\obj\Debug\Person.Repository.pdb
+C:\Users\Ivan\Documents\WebApi\Person.Repository\bin\Debug\Person.Model.dll
+C:\Users\Ivan\Documents\WebApi\Person.Repository\bin\Debug\Person.Repository.Common.dll
+C:\Users\Ivan\Documents\WebApi\Person.Repository\bin\Debug\Person.Model.Common.dll
+C:\Users\Ivan\Documents\WebApi\Person.Repository\bin\Debug\Person.Model.pdb
+C:\Users\Ivan\Documents\WebApi\Person.Repository\bin\Debug\Person.Repository.Common.pdb
+C:\Users\Ivan\Documents\WebApi\Person.Repository\bin\Debug\Person.Model.Common.pdb
+C:\Users\Ivan\Documents\WebApi\Person.Repository\obj\Debug\Person.Repository.csproj.CopyComplete
