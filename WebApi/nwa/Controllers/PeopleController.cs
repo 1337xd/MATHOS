@@ -13,7 +13,6 @@ namespace nwa.Controllers
         public static List<People> listPeople = new List<People>();
 
         [HttpGet]
-        [Route("api/people")]
         public void InsertDataToList()
         {
             listPeople.Add(new People { Id = 1, FirstName = "Ivan", LastName = "Pandžić", Age = 24, Gender = "male" });
@@ -59,7 +58,6 @@ namespace nwa.Controllers
         }
 
         [HttpPost]
-        [Route("api/people")]
         public void CreateNewPeople(List<People> person)
         {
             if (person == null)
