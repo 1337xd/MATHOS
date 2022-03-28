@@ -35,9 +35,16 @@ namespace nwa.Controllers
              PersonService personService = new PersonService();
              personService.Post(people);
 
-            return Request.CreateResponse(HttpStatusCode.OK, "entry is posted");
+             return Request.CreateResponse(HttpStatusCode.OK, "entry is posted");
             }
 
+
+        public HttpResponseMessage DeleteId(int Id)
+        {
+         PersonService personService = new PersonService();
+         personService.DeleteId(Id);
+         return Request.CreateResponse(HttpStatusCode.OK, $"Person with ID '{Id}'' is deleted");
+        }
 
     }
 

@@ -8,6 +8,8 @@ using Person.Model;
 using System.Data;
 using System.Data.SqlClient;
 using Person.Repository.Common;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Person.Repository
 {
@@ -20,7 +22,7 @@ namespace Person.Repository
 
         //GET
 
-        public List<PersonModel> GetAll()
+        public async Task<List<PersonModel>> GetAllAsync()
         {
             SqlConnection connection = new SqlConnection(connectionString);
    
@@ -28,11 +30,11 @@ namespace Person.Repository
             using (connection)
             {
                 SqlCommand command = new SqlCommand("SELECT * FROM Person;", connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                await connection.OpenAsync();
+                SqlDataReader reader = await command.ExecuteReaderAsync();
                 if (reader.HasRows)
                 {
-                    while (reader.Read())
+                    while (await reader.ReadAsync())
                     {
                         var person = new PersonModel();
 
@@ -56,29 +58,61 @@ namespace Person.Repository
         }
 
 
+        //GET by ID
+
+        public async Task<PersonModel> GetIdAsync(int Id)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            PersonModel personModel = new PersonModel();
+
+            using (connection)
+            {
+                SqlCommand command = new SqlCommand($"SELECT * FROM Person WHERE Id = '{Id}';", connection);
+
+                await connection.OpenAsync();
+
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+
+                if (await reader.ReadAsync())
+                {
+                    personModel.Id = reader.GetInt32(0);
+                    personModel.FirstName = reader.GetString(1);
+                    personModel.LastName = reader.GetString(2);
+                    personModel.Age = reader.GetInt32(3);
+                    personModel.Gender = reader.GetString(4);
+
+
+                    connection.Close();
+                    reader.Close();                    
+                }
+            }
+            return personModel;
+        }
+
+
         //POST
 
-        public PersonModel Post(PersonModel people)
+        public async Task PostAsync(PersonModel people)
         {
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter adapter = new SqlDataAdapter();
 
             using (connection)
             {
-                connection.Open();
-                string newColumn = $"INSERT INTO Person(Id, FirstName, LastName, Age, Gender) VALUES" +
+                await connection.OpenAsync();
+                string editColumn = $"INSERT INTO Person(Id, FirstName, LastName, Age, Gender) VALUES" +
                     $"('{people.Id}'," +
                     $"'{people.FirstName}'," +
                     $"'{people.LastName}'," +
                     $"'{people.Age}'," +
                     $"'{people.Gender}')";
 
-                adapter.InsertCommand = new SqlCommand(newColumn, connection);
-                adapter.InsertCommand.ExecuteNonQuery();
+                adapter.InsertCommand = new SqlCommand(editColumn, connection);
+                
+                await adapter.InsertCommand.ExecuteNonQueryAsync();
 
                 connection.Close();
-                return people;
-
             }
 
         }
@@ -113,7 +147,33 @@ namespace Person.Repository
 
         //DELETE
 
+        public async Task DeleteIdAsync(int Id)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlConnection connection = new SqlConnection(connectionString);
 
+            using (connection)
+            {
+                await connection.OpenAsync();
+
+                string deleteId = $"SELECT * FROM Person WHERE Id = '{Id}';";
+                SqlCommand command = new SqlCommand(deleteId, connection);
+                SqlDataReader reader = command.ExecuteReader();
+                
+                if(await reader.ReadAsync())
+                {
+                    connection.Close();
+
+                    await connection.OpenAsync();
+
+                    deleteId = $"DELETE FROM Person WHERE Id = '{Id}';";
+                    adapter.InsertCommand = new SqlCommand(deleteId, connection);
+                    await adapter.InsertCommand.ExecuteNonQueryAsync();
+
+                    connection.Close();
+                }
+            }
+        }
     }
 }
 

@@ -6,32 +6,52 @@ using System.Threading.Tasks;
 using Person.Model;
 using Person.Repository;
 using Person.Service.Common;
+using System.Threading;
 
 namespace Person.Service
 {
     public class PersonService : IPersonService
     {
-        List<PersonModel> personModel = new List<PersonModel>();
-        public List<PersonModel> GetAll()
+        public async Task<List<PersonModel>> GetAllAsync()
         {
             PersonRepository personRepository = new PersonRepository();
+            List<PersonModel> personModel = await personRepository.GetAllAsync();
 
-            return personRepository.GetAll();
+            return personModel;
         }
 
 
-        public void Post(PersonModel people)
+        public async Task<PersonModel> GetIdAsync(int Id)
         {
             PersonRepository personRepository = new PersonRepository();
-            personRepository.Post(people);
+            PersonModel personModel = await personRepository.GetIdAsync(Id);
+
+            return personModel;
         }
 
 
-        public void Put(PersonModel people)
+        public async void PostAsync(PersonModel people)
         {
             PersonRepository personRepository = new PersonRepository();
-            personRepository.Put(people);
+
+            await personRepository.PostAsync(people);
         }
+
+
+        public async void PutAsync(PersonModel people)
+        {
+            PersonRepository personRepository = new PersonRepository();
+            await personRepository.PutAsync(people);
+        }
+
+
+        public async void DeleteIdAsync(int Id)
+        {
+            PersonRepository personRepository = new PersonRepository();
+            await personRepository.DeleteIdAsync(Id);
+        }
+
+
     }
 }
     
