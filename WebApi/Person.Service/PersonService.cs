@@ -30,7 +30,10 @@ namespace Person.Service
         }
 
 
-        public async void PostAsync(PersonModel people)
+        public async 
+
+        Task
+PostAsync(PersonModel people)
         {
             PersonRepository personRepository = new PersonRepository();
 
@@ -45,7 +48,10 @@ namespace Person.Service
         }
 
 
-        public async void DeleteIdAsync(int Id)
+        public async 
+
+        Task
+DeleteIdAsync(int Id)
         {
             PersonRepository personRepository = new PersonRepository();
             await personRepository.DeleteIdAsync(Id);
