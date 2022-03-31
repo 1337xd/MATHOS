@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace Person.Service
 {
-    public class PersonService : IPersonService
+    public class PersonService : IPersonServiceCommon
     {
         public async Task<List<PersonModel>> GetAllAsync()
         {
@@ -30,10 +30,10 @@ namespace Person.Service
         }
 
 
-        public async 
+        
 
-        Task
-PostAsync(PersonModel people)
+        
+        public async Task PostAsync(PersonModel people)
         {
             PersonRepository personRepository = new PersonRepository();
 
@@ -41,17 +41,15 @@ PostAsync(PersonModel people)
         }
 
 
-        public async void PutAsync(PersonModel people)
+        public async Task PutAsync(int Id, PersonModel personEdit)
         {
             PersonRepository personRepository = new PersonRepository();
-            await personRepository.PutAsync(people);
+            await personRepository.PutAsync(Id, personEdit);
         }
 
 
-        public async 
-
-        Task
-DeleteIdAsync(int Id)
+        
+         public async Task DeleteIdAsync(int Id)
         {
             PersonRepository personRepository = new PersonRepository();
             await personRepository.DeleteIdAsync(Id);

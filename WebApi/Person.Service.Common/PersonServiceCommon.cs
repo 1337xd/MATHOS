@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Person.Service.Common
 {
-    public interface IPersonService
+    public interface IPersonServiceCommon
     {
     }
 }

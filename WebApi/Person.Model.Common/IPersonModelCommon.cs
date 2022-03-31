@@ -7,7 +7,7 @@ using Person.Model;
 
 namespace Person.Model.Common
 {
-    public interface PersonModelCommon
+    public interface IPersonModelCommon
     {
         int Id { get; set; }
         string FirstName { get; set; }

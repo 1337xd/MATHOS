@@ -120,25 +120,23 @@ namespace Person.Repository
 
         //UPDATE
 
-        public void Put(PersonModel people)
+        public async Task PutAsync(int Id, PersonModel peopleEdit)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
             var connection = new SqlConnection(connectionString);
 
             using (connection)
             {
-                string editColumn = $"UPDATE Person SET" + 
-                    $"('{people.Id}'," +
-                    $"'{people.FirstName}'," +
-                    $"'{people.LastName}'," +
-                    $"'{people.Age}'," +
-                    $"'{people.Gender}')";
+                await connection.OpenAsync();
 
-                connection.Open();
-
-                adapter.UpdateCommand = connection.CreateCommand();
-                adapter.UpdateCommand.CommandText = editColumn;
-                adapter.UpdateCommand.ExecuteNonQuery();
+                string commandText = "UPDATE Person SET FirstName = @FirstName, LastName = @LastName WHERE Id = @ID;";
+                SqlCommand sqlCommand = new SqlCommand(commandText, connection);
+                sqlCommand.Parameters.AddWithValue("@FirstName", peopleEdit.FirstName);
+                sqlCommand.Parameters.AddWithValue("@LastName", peopleEdit.LastName);
+                sqlCommand.Parameters.AddWithValue("@ID", Id);
+                adapter.InsertCommand = sqlCommand;
+                await connection.OpenAsync();
+                await adapter.InsertCommand.ExecuteNonQueryAsync();
 
                 connection.Close();
             }

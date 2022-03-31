@@ -7,15 +7,22 @@ using System.Web.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using nwa.Models;
+using Person.Service.Common;
 
 namespace nwa.Controllers
 {
     public class PersonController : ApiController
     {
-        public async Task<HttpResponseMessage> GetAllAsync()
+        public async Task<HttpResponseMessage> GetAllAsync(string firstName, string lastName, int age, int? pageNumber, int? numberPerPage, string sortBy, string sortOrder)
         {
             PersonService personService = new PersonService();
-            List<PersonModel> people = new List<PersonModel>();
+
+            ISorting sorting = new Sorting(sortBy ?? "FirstName", sortOrder);
+            IPaging paging = new Paging(pageNumber, numberPerPage);
+
+            List<PersonModel> people;
+            List<PersonRest> personRest = new List<PersonRest>();
+
             people = await personService.GetAllAsync();
 
             if (people == null)
@@ -35,9 +42,10 @@ namespace nwa.Controllers
         public async Task<HttpResponseMessage> GetIdAsync(int Id)
         {
             PersonService personService = new PersonService();
-            PersonModel people = await personService.GetIdAsync(Id);
+            PersonModel people;
+            people = await personService.GetIdAsync(Id);
 
-            if (people != null)
+            if (personService.GetAllAsync() == null)
             {
                 PersonRest personRest = new PersonRest();
 
@@ -58,12 +66,30 @@ namespace nwa.Controllers
 
 
         public async Task<HttpResponseMessage> PostAsync([FromBody] PersonModel people)
-            {
-             PersonService personService = new PersonService();
-             await personService.PostAsync(people);
+        {
+            PersonService personService = new PersonService();
+            await personService.PostAsync(people);
 
-             return Request.CreateResponse(HttpStatusCode.OK, "entry is posted");
+            return Request.CreateResponse(HttpStatusCode.OK, "entry is posted");
+        }
+
+
+        public async Task<HttpResponseMessage> PutAsync([FromUri] int Id, [FromBody]PersonRest personEdit)
+        {
+            var personService = new PersonService();
+            var people = await personService.GetIdAsync(Id);
+            if (people == null)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Not found");
             }
+            else
+            {
+                people.FirstName = personEdit.FirstName;
+                people.LastName = personEdit.LastName;
+                await personService.PutAsync(Id, people);
+                return Request.CreateResponse(HttpStatusCode.OK, personEdit);
+            }
+        }
 
 
         public async Task<HttpResponseMessage> DeleteIdAsync(int Id)
