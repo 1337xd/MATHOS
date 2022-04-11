@@ -1,0 +1,89 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  font-family: Fantasy;
+  font-size: 80px;
+}
+
+h2 {
+  color: red;
+  text-align: left;
+  font-family: Fantasy;
+  font-size: 40px;
+}
+
+h3 {
+  color: green;
+  text-align: left;
+  font-family: Cursive;
+  font-size: 30px;
+}
+
+h4 {
+  color: yellow;
+  text-align: left;
+  font-family: Cursive;
+  font-size: 30px;
+}
+
+h5 {
+  color: blue;
+  text-align: left;
+  font-family: Cursive;
+  font-size: 30px;
+}
+
+h6 {
+  color: yellow;
+  text-align: left;
+  font-family: Cursive;
+  font-size: 30px;
+}
+
+#reg {
+  color: black;
+  text-align: right;
+  font-family: Cursive;
+  font-size: 20px;
+}
+
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  text-align: left;
+}
+
+img {
+ width: 770px;
+ height: 500px;
+ border: 5px dotted green;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 15px;
+  text-align: center;
+}
+
+footer {
+  text-align: left;
+  vertical-align: center;
+  padding: 10px;
+  background-color: blue;
+  color: yellow;
+  border: 3px solid red;
+  width: 20%;
+}
