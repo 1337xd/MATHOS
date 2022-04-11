@@ -3,7 +3,7 @@ function validate() {
         if( document.myForm.name.value == "" ) {
 			text = "Name cannot be empty";
             document.getElementById("demo").innerHTML = text;
-            ocument.myForm.name.focus() ;
+            document.myForm.name.focus() ;
             return false;
             }
             if( document.myForm.email.value == "" ) {
