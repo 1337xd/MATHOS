@@ -52,37 +52,11 @@
 </tr>
 </table>
 
-
-
 <h3>Simple 2 number sum calc</h3><br/>
 number1 = <input type="text" id="number1" name="number1" value=""/>
 number2 = <input type="text" id="number2" name="number2" value=""/>
 <input type="button" name="Sumbit" value="Click here" onclick="javascript:addNumbers()"/>
 Answer = <input type="text" id="answer" name="answer" value=""/>
-
-
-<p>
-</p>
-<div id="container"></div>
-
-<script>
-var data = ["bird","dog","cat","mouse","cow","horse"];
-var myTable = document.createElement("table"),
-row = myTable.insertRow(), cell;
-
-var perrow = 3;
-    data.forEach((value, i) => {
-	cell = row.insertCell();
-    cell.innerHTML = value;
-	
-	//cell.onclick = FUNCTION; trebam dodat
-	  
-	var next = i + 1;
-    if (next%perrow==0 && next!=data.length) { row = myTable.insertRow(); }
-	});
-	  
-	  document.getElementById("container").appendChild(myTable);
-</script>
 
 
 <h5> Wanna take a survey to rate this site? </h5>
