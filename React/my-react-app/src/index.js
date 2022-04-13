@@ -1,0 +1,25 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import Header from './components/Header.js';
+import Content from './components/Content.js';
+import Tick from './components/Tick.js';
+import MyForms from './components/MyForms.js';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+    <Header />
+    <Content />
+    <Tick />
+    <MyForms />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
